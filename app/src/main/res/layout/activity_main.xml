@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#a00d0d"
+    tools:context="com.example.marlonscheer.findabar.MainActivity">
+
+
+    <EditText
+        android:id="@+id/etUsername"
+        style="@style/Widget.AppCompat.Button.Borderless.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:ems="10"
+        android:fontFamily="sans-serif"
+        android:hint="Enter your Username"
+        android:inputType="textPersonName"
+        android:textColor="#000000"
+        android:textColorHint="#000000"
+        android:layout_above="@+id/etPassword"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="9dp"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:id="@+id/btnLogin"
+        style="@style/Widget.AppCompat.Button.Borderless.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/buttonreglog"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentStart="true"
+        android:onClick="userLogin"
+        android:textColor="#ffffff"
+        android:text="Login" />
+
+    <EditText
+        android:id="@+id/etPassword"
+        style="@style/Widget.AppCompat.Button.Borderless.Colored"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btnLogin"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="6dp"
+        android:background="#ffffff"
+        android:ems="10"
+        android:fontFamily="sans-serif"
+        android:hint="Password"
+        android:inputType="textPassword"
+        android:textColor="#000000"
+        android:textColorHint="#000000"
+        android:layout_alignParentEnd="true" />
+
+    <Button
+        android:id="@+id/buttonreglog"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/btnLogin"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:onClick="userReg"
+        android:text="No Member? Register"
+        android:textColor="#ffffff" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/etUsername"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="13dp"
+        android:scaleType="centerInside"
+        app:srcCompat="@drawable/findabar" />
+
+
+</RelativeLayout>
