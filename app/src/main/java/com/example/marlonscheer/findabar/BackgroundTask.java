@@ -1,13 +1,11 @@
-package com.example.marlonscheer.findabar;
 
+package com.example.marlonscheer.findabar;
 
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
-import android.widget.Button;
 import android.widget.Toast;
-
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -20,10 +18,10 @@ import java.net.URL;
 import java.net.URLEncoder;
 
 class BackgroundTask extends AsyncTask<String,Void,String> {
+
         private final Context ctx;
-        private AlertDialog alertDialog;
         private String result;
-        public Button show;
+
 
 
         BackgroundTask(Context ctx) {
@@ -34,23 +32,20 @@ class BackgroundTask extends AsyncTask<String,Void,String> {
 
 
 
-
-        @Override
+    @Override
         protected void onPreExecute() {
             super.onPreExecute();
-            alertDialog = new AlertDialog.Builder(ctx).create();
-            alertDialog.setTitle("Login Information...");
+
+
+      }
 
 
 
-
-        }
-
-
+//  Registration with MySQL and PHP
         @Override
         protected String doInBackground(String... params) {
-            String reg_url = "http://192.168.43.157:8888/registerfindabar.php";
-            String login_url = "http://192.168.43.157:8888/loginfindabar.php";
+            String reg_url = "http://findabar.hopto.org:8888/registerfindabar.php";
+            String login_url = "http://findabar.hopto.org:8888/loginfindabar.php";
             String method = params[0];
             if (method.equals("register")) {
                 String name = params[1];
@@ -84,7 +79,7 @@ class BackgroundTask extends AsyncTask<String,Void,String> {
                     IS.close();
 
 
-                    return "Registration Success!";
+                    return "Registration was successful!";
 
 
                 } catch (IOException e) {
@@ -92,7 +87,7 @@ class BackgroundTask extends AsyncTask<String,Void,String> {
                 }
 
 
-            } else if (method.equals("login")) {
+            } else if (method.equals("login")) /*      Login method      */{
                 String login_name = params[1];
                 String login_pass = params[2];
 
@@ -163,8 +158,9 @@ class BackgroundTask extends AsyncTask<String,Void,String> {
 
             //    If login is success or fail
 
-            if (result.equals("Registration Success!")) {
+            if (result.equals("Registration was successful!")) {
                 Toast.makeText(ctx, result, Toast.LENGTH_LONG).show();
+                Toast.makeText(ctx,"Also Logged in ;)", Toast.LENGTH_LONG).show();
             }
 
             else {
@@ -183,9 +179,11 @@ class BackgroundTask extends AsyncTask<String,Void,String> {
             }
 
 
+
+
         }
 
 
 
+}
 
-    }
